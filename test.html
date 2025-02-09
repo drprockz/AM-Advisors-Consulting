@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Why AMA - GSAP Circle Animation</title>
+      <link rel="stylesheet" href="vendor.css" />
+      <link rel="stylesheet" href="index.css" />
+      <!-- GSAP + MotionPathPlugin (CDN) -->
+      <script
+         src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+      <script
+         src="https://cdn.jsdelivr.net/npm/gsap@3/dist/MotionPathPlugin.min.js"></script>
+   </head>
+   <body>
+    <div>
+        <div class="navbar">
+           <div class="navbar-info">
+              <div class="inner-div"></div>
+           </div>
+           <!-- <div class="Cancle-btn">
+              <div>
+                 <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 15 15" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7816 4.03157C12.0062 3.80702 12.0062 3.44295 11.7816 3.2184C11.5571 2.99385 11.193 2.99385 10.9685 3.2184L7.50005 6.68682L4.03164 3.2184C3.80708 2.99385 3.44301 2.99385 3.21846 3.2184C2.99391 3.44295 2.99391 3.80702 3.21846 4.03157L6.68688 7.49999L3.21846 10.9684C2.99391 11.193 2.99391 11.557 3.21846 11.7816C3.44301 12.0061 3.80708 12.0061 4.03164 11.7816L7.50005 8.31316L10.9685 11.7816C11.193 12.0061 11.5571 12.0061 11.7816 11.7816C12.0062 11.557 12.0062 11.193 11.7816 10.9684L8.31322 7.49999L11.7816 4.03157Z" fill="currentColor"></path>
+                 </svg>
+              </div>
+           </div> -->
+           <div class="radial-grad"></div>
+           <!-- <div id="cursorDefault" class="cursorDefault defaultcursor" style="transform: translate(8px, 470px);"><span class="change-action"></span><span class="change-cursor-text"></span></div> -->
+           <div class="inner-navbar-list">
+              <nav id="nav"><a href="/about-esds">
+                <span>AMA</span><img src="about%20us.png"></a><a href="https://www.esds.co.in/esds-peoples/careers/" target="_blank">
+                <span>Careers</span><img src="careers.jpg"></a><a href="/why-esds">
+                <span>Why ESDS</span><img src="why%20esds.jpg"></a><a href="/whitepapers ">
+                <span>White Papers</span><img src="white%20papers.jpg"></a><a href="https://www.esds.co.in/esds-peoples/news-events/" target="_blank">
+                <span>Media &amp; Events</span><img src="events.jpg"></a><a href="/investors"><span>Investor Report</span><img src="investor%20reports.jpg"></a><a href="/leadership"><span>Leadership </span><img src="leadership.jpg"></a><a href="/contact-us"><span>Contact Us </span><img src="contact-us.jpg"></a></nav>
+           </div>
+           <section class="navbar-innerdiv">
+              <div class="right-border-of-card">
+                 <div class="right-Sublist">
+                    <div class="list">
+                       <a href="/cloud-services">
+                          <div class="Item">
+                             <div class="cloud-icon"><img src="data:image/svg+xml,%3csvg%20width='47'%20height='57'%20viewBox='0%200%2047%2057'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M28.5491%205.75857C28.5815%205.77725%2028.6136%205.79626%2028.6455%205.81563L28.593%205.78532L28.5461%205.75793C27.7134%205.27733%2026.7478%205.02708%2025.6837%205.02734C24.208%205.02759%2022.5429%205.5097%2020.7801%206.52747L20.7803%206.52763C20.6469%206.60469%2020.514%206.68418%2020.3817%206.76601C16.218%209.34097%2012.6564%2014.2435%2010.9167%2019.3193L10.9168%2019.3193C4.82816%2023.2548%200.000354767%2031.8549%200.000354767%2038.9917V38.9925L-0.000919342%2038.9917C-0.000919342%2042.8258%201.32044%2045.5217%203.4376%2046.7436L3.52117%2046.7919C3.4927%2046.7761%203.46437%2046.7601%203.43618%2046.7439L10.4673%2050.8033C12.4392%2051.9414%2015.1015%2051.8008%2018.0295%2050.1103L10.9996%2046.0516L11.0012%2046.0507L29.3381%2035.4638L29.3394%2035.4645L11.0029%2046.0511L18.034%2050.1105L36.3716%2039.5233L36.37%2039.5224C41.824%2036.0293%2046.1484%2028.5943%2046.1484%2022.5846L39.1182%2018.5257V18.525V18.5249L46.1484%2022.5838C46.1484%2019.5907%2045.0759%2017.489%2043.3257%2016.4789L38.3575%2013.6105C37.8313%2011.8474%2036.863%2010.5583%2035.5787%209.81711L28.5491%205.75857ZM31.7435%2011.9761C31.6777%2010.9621%2031.5012%2010.0474%2031.2273%209.23988L31.2258%209.24017C31.4997%2010.0477%2031.6762%2010.9625%2031.742%2011.9765L31.7435%2011.9761Z'%20fill='%23D4E4FE'/%3e%3cpath%20d='M17.9482%2023.3783C19.743%2018.1416%2023.4771%2013.0893%2027.8109%2010.5872C33.6155%207.2359%2038.3608%209.69252%2038.7723%2016.0362C43.0404%2014.9773%2046.1484%2017.4895%2046.1484%2022.5847C46.1484%2028.5948%2041.8234%2036.0304%2036.369%2039.5232L18.0314%2050.1104C11.9597%2053.6159%207.03058%2050.4567%207.03058%2043.0515C7.03058%2035.9141%2011.859%2027.3134%2017.9482%2023.3783Z'%20fill='white'/%3e%3c/svg%3e" alt=""></div>
+                             <div class="text">Cloud</div>
+                             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="sub-svg-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="m112 244 144-144 144 144M256 120v292"></path>
+                             </svg>
+                          </div>
+                       </a>
+                       <a href="/private-cloud-services">
+                          <div class="Item">
+                             <div class="cloud-icon"><img src="data:image/svg+xml,%3csvg%20width='47'%20height='57'%20viewBox='0%200%2047%2057'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M28.5491%205.75857C28.5815%205.77725%2028.6136%205.79626%2028.6455%205.81563L28.593%205.78532L28.5461%205.75793C27.7134%205.27733%2026.7478%205.02708%2025.6837%205.02734C24.208%205.02759%2022.5429%205.5097%2020.7801%206.52747L20.7803%206.52763C20.6469%206.60469%2020.514%206.68418%2020.3817%206.76601C16.218%209.34097%2012.6564%2014.2435%2010.9167%2019.3193L10.9168%2019.3193C4.82816%2023.2548%200.000354767%2031.8549%200.000354767%2038.9917V38.9925L-0.000919342%2038.9917C-0.000919342%2042.8258%201.32044%2045.5217%203.4376%2046.7436L3.52117%2046.7919C3.4927%2046.7761%203.46437%2046.7601%203.43618%2046.7439L10.4673%2050.8033C12.4392%2051.9414%2015.1015%2051.8008%2018.0295%2050.1103L10.9996%2046.0516L11.0012%2046.0507L29.3381%2035.4638L29.3394%2035.4645L11.0029%2046.0511L18.034%2050.1105L36.3716%2039.5233L36.37%2039.5224C41.824%2036.0293%2046.1484%2028.5943%2046.1484%2022.5846L39.1182%2018.5257V18.525V18.5249L46.1484%2022.5838C46.1484%2019.5907%2045.0759%2017.489%2043.3257%2016.4789L38.3575%2013.6105C37.8313%2011.8474%2036.863%2010.5583%2035.5787%209.81711L28.5491%205.75857ZM31.7435%2011.9761C31.6777%2010.9621%2031.5012%2010.0474%2031.2273%209.23988L31.2258%209.24017C31.4997%2010.0477%2031.6762%2010.9625%2031.742%2011.9765L31.7435%2011.9761Z'%20fill='%23D4E4FE'/%3e%3cpath%20d='M17.9482%2023.3783C19.743%2018.1416%2023.4771%2013.0893%2027.8109%2010.5872C33.6155%207.2359%2038.3608%209.69252%2038.7723%2016.0362C43.0404%2014.9773%2046.1484%2017.4895%2046.1484%2022.5847C46.1484%2028.5948%2041.8234%2036.0304%2036.369%2039.5232L18.0314%2050.1104C11.9597%2053.6159%207.03058%2050.4567%207.03058%2043.0515C7.03058%2035.9141%2011.859%2027.3134%2017.9482%2023.3783Z'%20fill='white'/%3e%3c/svg%3e" alt=""></div>
+                             <div class="text">Private Cloud</div>
+                             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="sub-svg-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="m112 244 144-144 144 144M256 120v292"></path>
+                             </svg>
+                          </div>
+                       </a>
+                       <a href="/enterprise-cloud-services">
+                          <div class="Item">
+                             <div class="cloud-icon"><img src="data:image/svg+xml,%3csvg%20width='47'%20height='57'%20viewBox='0%200%2047%2057'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M28.5491%205.75857C28.5815%205.77725%2028.6136%205.79626%2028.6455%205.81563L28.593%205.78532L28.5461%205.75793C27.7134%205.27733%2026.7478%205.02708%2025.6837%205.02734C24.208%205.02759%2022.5429%205.5097%2020.7801%206.52747L20.7803%206.52763C20.6469%206.60469%2020.514%206.68418%2020.3817%206.76601C16.218%209.34097%2012.6564%2014.2435%2010.9167%2019.3193L10.9168%2019.3193C4.82816%2023.2548%200.000354767%2031.8549%200.000354767%2038.9917V38.9925L-0.000919342%2038.9917C-0.000919342%2042.8258%201.32044%2045.5217%203.4376%2046.7436L3.52117%2046.7919C3.4927%2046.7761%203.46437%2046.7601%203.43618%2046.7439L10.4673%2050.8033C12.4392%2051.9414%2015.1015%2051.8008%2018.0295%2050.1103L10.9996%2046.0516L11.0012%2046.0507L29.3381%2035.4638L29.3394%2035.4645L11.0029%2046.0511L18.034%2050.1105L36.3716%2039.5233L36.37%2039.5224C41.824%2036.0293%2046.1484%2028.5943%2046.1484%2022.5846L39.1182%2018.5257V18.525V18.5249L46.1484%2022.5838C46.1484%2019.5907%2045.0759%2017.489%2043.3257%2016.4789L38.3575%2013.6105C37.8313%2011.8474%2036.863%2010.5583%2035.5787%209.81711L28.5491%205.75857ZM31.7435%2011.9761C31.6777%2010.9621%2031.5012%2010.0474%2031.2273%209.23988L31.2258%209.24017C31.4997%2010.0477%2031.6762%2010.9625%2031.742%2011.9765L31.7435%2011.9761Z'%20fill='%23D4E4FE'/%3e%3cpath%20d='M17.9482%2023.3783C19.743%2018.1416%2023.4771%2013.0893%2027.8109%2010.5872C33.6155%207.2359%2038.3608%209.69252%2038.7723%2016.0362C43.0404%2014.9773%2046.1484%2017.4895%2046.1484%2022.5847C46.1484%2028.5948%2041.8234%2036.0304%2036.369%2039.5232L18.0314%2050.1104C11.9597%2053.6159%207.03058%2050.4567%207.03058%2043.0515C7.03058%2035.9141%2011.859%2027.3134%2017.9482%2023.3783Z'%20fill='white'/%3e%3c/svg%3e" alt=""></div>
+                             <div class="text">Enterprise Cloud</div>
+                             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="sub-svg-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="m112 244 144-144 144 144M256 120v292"></path>
+                             </svg>
+                          </div>
+                       </a>
+                       <a href="/bfsi-cloud-services">
+                          <div class="Item">
+                             <div class="cloud-icon"><img src="data:image/svg+xml,%3csvg%20width='47'%20height='57'%20viewBox='0%200%2047%2057'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M28.5491%205.75857C28.5815%205.77725%2028.6136%205.79626%2028.6455%205.81563L28.593%205.78532L28.5461%205.75793C27.7134%205.27733%2026.7478%205.02708%2025.6837%205.02734C24.208%205.02759%2022.5429%205.5097%2020.7801%206.52747L20.7803%206.52763C20.6469%206.60469%2020.514%206.68418%2020.3817%206.76601C16.218%209.34097%2012.6564%2014.2435%2010.9167%2019.3193L10.9168%2019.3193C4.82816%2023.2548%200.000354767%2031.8549%200.000354767%2038.9917V38.9925L-0.000919342%2038.9917C-0.000919342%2042.8258%201.32044%2045.5217%203.4376%2046.7436L3.52117%2046.7919C3.4927%2046.7761%203.46437%2046.7601%203.43618%2046.7439L10.4673%2050.8033C12.4392%2051.9414%2015.1015%2051.8008%2018.0295%2050.1103L10.9996%2046.0516L11.0012%2046.0507L29.3381%2035.4638L29.3394%2035.4645L11.0029%2046.0511L18.034%2050.1105L36.3716%2039.5233L36.37%2039.5224C41.824%2036.0293%2046.1484%2028.5943%2046.1484%2022.5846L39.1182%2018.5257V18.525V18.5249L46.1484%2022.5838C46.1484%2019.5907%2045.0759%2017.489%2043.3257%2016.4789L38.3575%2013.6105C37.8313%2011.8474%2036.863%2010.5583%2035.5787%209.81711L28.5491%205.75857ZM31.7435%2011.9761C31.6777%2010.9621%2031.5012%2010.0474%2031.2273%209.23988L31.2258%209.24017C31.4997%2010.0477%2031.6762%2010.9625%2031.742%2011.9765L31.7435%2011.9761Z'%20fill='%23D4E4FE'/%3e%3cpath%20d='M17.9482%2023.3783C19.743%2018.1416%2023.4771%2013.0893%2027.8109%2010.5872C33.6155%207.2359%2038.3608%209.69252%2038.7723%2016.0362C43.0404%2014.9773%2046.1484%2017.4895%2046.1484%2022.5847C46.1484%2028.5948%2041.8234%2036.0304%2036.369%2039.5232L18.0314%2050.1104C11.9597%2053.6159%207.03058%2050.4567%207.03058%2043.0515C7.03058%2035.9141%2011.859%2027.3134%2017.9482%2023.3783Z'%20fill='white'/%3e%3c/svg%3e" alt=""></div>
+                             <div class="text">BFSI Community Cloud</div>
+                             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="sub-svg-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="m112 244 144-144 144 144M256 120v292"></path>
+                             </svg>
+                          </div>
+                       </a>
+                       <a href="/government-cloud-services">
+                          <div class="Item">
+                             <div class="cloud-icon"><img src="data:image/svg+xml,%3csvg%20width='47'%20height='57'%20viewBox='0%200%2047%2057'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M28.5491%205.75857C28.5815%205.77725%2028.6136%205.79626%2028.6455%205.81563L28.593%205.78532L28.5461%205.75793C27.7134%205.27733%2026.7478%205.02708%2025.6837%205.02734C24.208%205.02759%2022.5429%205.5097%2020.7801%206.52747L20.7803%206.52763C20.6469%206.60469%2020.514%206.68418%2020.3817%206.76601C16.218%209.34097%2012.6564%2014.2435%2010.9167%2019.3193L10.9168%2019.3193C4.82816%2023.2548%200.000354767%2031.8549%200.000354767%2038.9917V38.9925L-0.000919342%2038.9917C-0.000919342%2042.8258%201.32044%2045.5217%203.4376%2046.7436L3.52117%2046.7919C3.4927%2046.7761%203.46437%2046.7601%203.43618%2046.7439L10.4673%2050.8033C12.4392%2051.9414%2015.1015%2051.8008%2018.0295%2050.1103L10.9996%2046.0516L11.0012%2046.0507L29.3381%2035.4638L29.3394%2035.4645L11.0029%2046.0511L18.034%2050.1105L36.3716%2039.5233L36.37%2039.5224C41.824%2036.0293%2046.1484%2028.5943%2046.1484%2022.5846L39.1182%2018.5257V18.525V18.5249L46.1484%2022.5838C46.1484%2019.5907%2045.0759%2017.489%2043.3257%2016.4789L38.3575%2013.6105C37.8313%2011.8474%2036.863%2010.5583%2035.5787%209.81711L28.5491%205.75857ZM31.7435%2011.9761C31.6777%2010.9621%2031.5012%2010.0474%2031.2273%209.23988L31.2258%209.24017C31.4997%2010.0477%2031.6762%2010.9625%2031.742%2011.9765L31.7435%2011.9761Z'%20fill='%23D4E4FE'/%3e%3cpath%20d='M17.9482%2023.3783C19.743%2018.1416%2023.4771%2013.0893%2027.8109%2010.5872C33.6155%207.2359%2038.3608%209.69252%2038.7723%2016.0362C43.0404%2014.9773%2046.1484%2017.4895%2046.1484%2022.5847C46.1484%2028.5948%2041.8234%2036.0304%2036.369%2039.5232L18.0314%2050.1104C11.9597%2053.6159%207.03058%2050.4567%207.03058%2043.0515C7.03058%2035.9141%2011.859%2027.3134%2017.9482%2023.3783Z'%20fill='white'/%3e%3c/svg%3e" alt=""></div>
+                             <div class="text">Government Community Cloud</div>
+                             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="sub-svg-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="m112 244 144-144 144 144M256 120v292"></path>
+                             </svg>
+                          </div>
+                       </a>
+                    </div>
+                 </div>
+              </div>
+              <div class="Left-border-of-card">
+                 <div class="Left-Sublist">
+                    <div class="list">
+                       <a href="/cloud-services">
+                          <div class="Item">
+                             <div class="cloud-icon"><img src="data:image/svg+xml,%3csvg%20width='47'%20height='57'%20viewBox='0%200%2047%2057'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M28.5491%205.75857C28.5815%205.77725%2028.6136%205.79626%2028.6455%205.81563L28.593%205.78532L28.5461%205.75793C27.7134%205.27733%2026.7478%205.02708%2025.6837%205.02734C24.208%205.02759%2022.5429%205.5097%2020.7801%206.52747L20.7803%206.52763C20.6469%206.60469%2020.514%206.68418%2020.3817%206.76601C16.218%209.34097%2012.6564%2014.2435%2010.9167%2019.3193L10.9168%2019.3193C4.82816%2023.2548%200.000354767%2031.8549%200.000354767%2038.9917V38.9925L-0.000919342%2038.9917C-0.000919342%2042.8258%201.32044%2045.5217%203.4376%2046.7436L3.52117%2046.7919C3.4927%2046.7761%203.46437%2046.7601%203.43618%2046.7439L10.4673%2050.8033C12.4392%2051.9414%2015.1015%2051.8008%2018.0295%2050.1103L10.9996%2046.0516L11.0012%2046.0507L29.3381%2035.4638L29.3394%2035.4645L11.0029%2046.0511L18.034%2050.1105L36.3716%2039.5233L36.37%2039.5224C41.824%2036.0293%2046.1484%2028.5943%2046.1484%2022.5846L39.1182%2018.5257V18.525V18.5249L46.1484%2022.5838C46.1484%2019.5907%2045.0759%2017.489%2043.3257%2016.4789L38.3575%2013.6105C37.8313%2011.8474%2036.863%2010.5583%2035.5787%209.81711L28.5491%205.75857ZM31.7435%2011.9761C31.6777%2010.9621%2031.5012%2010.0474%2031.2273%209.23988L31.2258%209.24017C31.4997%2010.0477%2031.6762%2010.9625%2031.742%2011.9765L31.7435%2011.9761Z'%20fill='%23D4E4FE'/%3e%3cpath%20d='M17.9482%2023.3783C19.743%2018.1416%2023.4771%2013.0893%2027.8109%2010.5872C33.6155%207.2359%2038.3608%209.69252%2038.7723%2016.0362C43.0404%2014.9773%2046.1484%2017.4895%2046.1484%2022.5847C46.1484%2028.5948%2041.8234%2036.0304%2036.369%2039.5232L18.0314%2050.1104C11.9597%2053.6159%207.03058%2050.4567%207.03058%2043.0515C7.03058%2035.9141%2011.859%2027.3134%2017.9482%2023.3783Z'%20fill='white'/%3e%3c/svg%3e" alt=""></div>
+                             <div class="text">Cloud</div>
+                             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="m112 244 144-144 144 144M256 120v292"></path>
+                             </svg>
+                          </div>
+                       </a>
+                       <a href="/private-cloud-services">
+                          <div class="Item">
+                             <div class="cloud-icon"><img src="data:image/svg+xml,%3csvg%20width='47'%20height='57'%20viewBox='0%200%2047%2057'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M28.5491%205.75857C28.5815%205.77725%2028.6136%205.79626%2028.6455%205.81563L28.593%205.78532L28.5461%205.75793C27.7134%205.27733%2026.7478%205.02708%2025.6837%205.02734C24.208%205.02759%2022.5429%205.5097%2020.7801%206.52747L20.7803%206.52763C20.6469%206.60469%2020.514%206.68418%2020.3817%206.76601C16.218%209.34097%2012.6564%2014.2435%2010.9167%2019.3193L10.9168%2019.3193C4.82816%2023.2548%200.000354767%2031.8549%200.000354767%2038.9917V38.9925L-0.000919342%2038.9917C-0.000919342%2042.8258%201.32044%2045.5217%203.4376%2046.7436L3.52117%2046.7919C3.4927%2046.7761%203.46437%2046.7601%203.43618%2046.7439L10.4673%2050.8033C12.4392%2051.9414%2015.1015%2051.8008%2018.0295%2050.1103L10.9996%2046.0516L11.0012%2046.0507L29.3381%2035.4638L29.3394%2035.4645L11.0029%2046.0511L18.034%2050.1105L36.3716%2039.5233L36.37%2039.5224C41.824%2036.0293%2046.1484%2028.5943%2046.1484%2022.5846L39.1182%2018.5257V18.525V18.5249L46.1484%2022.5838C46.1484%2019.5907%2045.0759%2017.489%2043.3257%2016.4789L38.3575%2013.6105C37.8313%2011.8474%2036.863%2010.5583%2035.5787%209.81711L28.5491%205.75857ZM31.7435%2011.9761C31.6777%2010.9621%2031.5012%2010.0474%2031.2273%209.23988L31.2258%209.24017C31.4997%2010.0477%2031.6762%2010.9625%2031.742%2011.9765L31.7435%2011.9761Z'%20fill='%23D4E4FE'/%3e%3cpath%20d='M17.9482%2023.3783C19.743%2018.1416%2023.4771%2013.0893%2027.8109%2010.5872C33.6155%207.2359%2038.3608%209.69252%2038.7723%2016.0362C43.0404%2014.9773%2046.1484%2017.4895%2046.1484%2022.5847C46.1484%2028.5948%2041.8234%2036.0304%2036.369%2039.5232L18.0314%2050.1104C11.9597%2053.6159%207.03058%2050.4567%207.03058%2043.0515C7.03058%2035.9141%2011.859%2027.3134%2017.9482%2023.3783Z'%20fill='white'/%3e%3c/svg%3e" alt=""></div>
+                             <div class="text">Private Cloud</div>
+                             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="m112 244 144-144 144 144M256 120v292"></path>
+                             </svg>
+                          </div>
+                       </a>
+                       <a href="/enterprise-cloud-services">
+                          <div class="Item">
+                             <div class="cloud-icon"><img src="data:image/svg+xml,%3csvg%20width='47'%20height='57'%20viewBox='0%200%2047%2057'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M28.5491%205.75857C28.5815%205.77725%2028.6136%205.79626%2028.6455%205.81563L28.593%205.78532L28.5461%205.75793C27.7134%205.27733%2026.7478%205.02708%2025.6837%205.02734C24.208%205.02759%2022.5429%205.5097%2020.7801%206.52747L20.7803%206.52763C20.6469%206.60469%2020.514%206.68418%2020.3817%206.76601C16.218%209.34097%2012.6564%2014.2435%2010.9167%2019.3193L10.9168%2019.3193C4.82816%2023.2548%200.000354767%2031.8549%200.000354767%2038.9917V38.9925L-0.000919342%2038.9917C-0.000919342%2042.8258%201.32044%2045.5217%203.4376%2046.7436L3.52117%2046.7919C3.4927%2046.7761%203.46437%2046.7601%203.43618%2046.7439L10.4673%2050.8033C12.4392%2051.9414%2015.1015%2051.8008%2018.0295%2050.1103L10.9996%2046.0516L11.0012%2046.0507L29.3381%2035.4638L29.3394%2035.4645L11.0029%2046.0511L18.034%2050.1105L36.3716%2039.5233L36.37%2039.5224C41.824%2036.0293%2046.1484%2028.5943%2046.1484%2022.5846L39.1182%2018.5257V18.525V18.5249L46.1484%2022.5838C46.1484%2019.5907%2045.0759%2017.489%2043.3257%2016.4789L38.3575%2013.6105C37.8313%2011.8474%2036.863%2010.5583%2035.5787%209.81711L28.5491%205.75857ZM31.7435%2011.9761C31.6777%2010.9621%2031.5012%2010.0474%2031.2273%209.23988L31.2258%209.24017C31.4997%2010.0477%2031.6762%2010.9625%2031.742%2011.9765L31.7435%2011.9761Z'%20fill='%23D4E4FE'/%3e%3cpath%20d='M17.9482%2023.3783C19.743%2018.1416%2023.4771%2013.0893%2027.8109%2010.5872C33.6155%207.2359%2038.3608%209.69252%2038.7723%2016.0362C43.0404%2014.9773%2046.1484%2017.4895%2046.1484%2022.5847C46.1484%2028.5948%2041.8234%2036.0304%2036.369%2039.5232L18.0314%2050.1104C11.9597%2053.6159%207.03058%2050.4567%207.03058%2043.0515C7.03058%2035.9141%2011.859%2027.3134%2017.9482%2023.3783Z'%20fill='white'/%3e%3c/svg%3e" alt=""></div>
+                             <div class="text">Enterprise Cloud</div>
+                             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="m112 244 144-144 144 144M256 120v292"></path>
+                             </svg>
+                          </div>
+                       </a>
+                       <a href="/bfsi-cloud-services">
+                          <div class="Item">
+                             <div class="cloud-icon"><img src="data:image/svg+xml,%3csvg%20width='47'%20height='57'%20viewBox='0%200%2047%2057'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M28.5491%205.75857C28.5815%205.77725%2028.6136%205.79626%2028.6455%205.81563L28.593%205.78532L28.5461%205.75793C27.7134%205.27733%2026.7478%205.02708%2025.6837%205.02734C24.208%205.02759%2022.5429%205.5097%2020.7801%206.52747L20.7803%206.52763C20.6469%206.60469%2020.514%206.68418%2020.3817%206.76601C16.218%209.34097%2012.6564%2014.2435%2010.9167%2019.3193L10.9168%2019.3193C4.82816%2023.2548%200.000354767%2031.8549%200.000354767%2038.9917V38.9925L-0.000919342%2038.9917C-0.000919342%2042.8258%201.32044%2045.5217%203.4376%2046.7436L3.52117%2046.7919C3.4927%2046.7761%203.46437%2046.7601%203.43618%2046.7439L10.4673%2050.8033C12.4392%2051.9414%2015.1015%2051.8008%2018.0295%2050.1103L10.9996%2046.0516L11.0012%2046.0507L29.3381%2035.4638L29.3394%2035.4645L11.0029%2046.0511L18.034%2050.1105L36.3716%2039.5233L36.37%2039.5224C41.824%2036.0293%2046.1484%2028.5943%2046.1484%2022.5846L39.1182%2018.5257V18.525V18.5249L46.1484%2022.5838C46.1484%2019.5907%2045.0759%2017.489%2043.3257%2016.4789L38.3575%2013.6105C37.8313%2011.8474%2036.863%2010.5583%2035.5787%209.81711L28.5491%205.75857ZM31.7435%2011.9761C31.6777%2010.9621%2031.5012%2010.0474%2031.2273%209.23988L31.2258%209.24017C31.4997%2010.0477%2031.6762%2010.9625%2031.742%2011.9765L31.7435%2011.9761Z'%20fill='%23D4E4FE'/%3e%3cpath%20d='M17.9482%2023.3783C19.743%2018.1416%2023.4771%2013.0893%2027.8109%2010.5872C33.6155%207.2359%2038.3608%209.69252%2038.7723%2016.0362C43.0404%2014.9773%2046.1484%2017.4895%2046.1484%2022.5847C46.1484%2028.5948%2041.8234%2036.0304%2036.369%2039.5232L18.0314%2050.1104C11.9597%2053.6159%207.03058%2050.4567%207.03058%2043.0515C7.03058%2035.9141%2011.859%2027.3134%2017.9482%2023.3783Z'%20fill='white'/%3e%3c/svg%3e" alt=""></div>
+                             <div class="text">BFSI Community Cloud</div>
+                             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="m112 244 144-144 144 144M256 120v292"></path>
+                             </svg>
+                          </div>
+                       </a>
+                       <a href="/government-cloud-services">
+                          <div class="Item">
+                             <div class="cloud-icon"><img src="data:image/svg+xml,%3csvg%20width='47'%20height='57'%20viewBox='0%200%2047%2057'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M28.5491%205.75857C28.5815%205.77725%2028.6136%205.79626%2028.6455%205.81563L28.593%205.78532L28.5461%205.75793C27.7134%205.27733%2026.7478%205.02708%2025.6837%205.02734C24.208%205.02759%2022.5429%205.5097%2020.7801%206.52747L20.7803%206.52763C20.6469%206.60469%2020.514%206.68418%2020.3817%206.76601C16.218%209.34097%2012.6564%2014.2435%2010.9167%2019.3193L10.9168%2019.3193C4.82816%2023.2548%200.000354767%2031.8549%200.000354767%2038.9917V38.9925L-0.000919342%2038.9917C-0.000919342%2042.8258%201.32044%2045.5217%203.4376%2046.7436L3.52117%2046.7919C3.4927%2046.7761%203.46437%2046.7601%203.43618%2046.7439L10.4673%2050.8033C12.4392%2051.9414%2015.1015%2051.8008%2018.0295%2050.1103L10.9996%2046.0516L11.0012%2046.0507L29.3381%2035.4638L29.3394%2035.4645L11.0029%2046.0511L18.034%2050.1105L36.3716%2039.5233L36.37%2039.5224C41.824%2036.0293%2046.1484%2028.5943%2046.1484%2022.5846L39.1182%2018.5257V18.525V18.5249L46.1484%2022.5838C46.1484%2019.5907%2045.0759%2017.489%2043.3257%2016.4789L38.3575%2013.6105C37.8313%2011.8474%2036.863%2010.5583%2035.5787%209.81711L28.5491%205.75857ZM31.7435%2011.9761C31.6777%2010.9621%2031.5012%2010.0474%2031.2273%209.23988L31.2258%209.24017C31.4997%2010.0477%2031.6762%2010.9625%2031.742%2011.9765L31.7435%2011.9761Z'%20fill='%23D4E4FE'/%3e%3cpath%20d='M17.9482%2023.3783C19.743%2018.1416%2023.4771%2013.0893%2027.8109%2010.5872C33.6155%207.2359%2038.3608%209.69252%2038.7723%2016.0362C43.0404%2014.9773%2046.1484%2017.4895%2046.1484%2022.5847C46.1484%2028.5948%2041.8234%2036.0304%2036.369%2039.5232L18.0314%2050.1104C11.9597%2053.6159%207.03058%2050.4567%207.03058%2043.0515C7.03058%2035.9141%2011.859%2027.3134%2017.9482%2023.3783Z'%20fill='white'/%3e%3c/svg%3e" alt=""></div>
+                             <div class="text">Government Community Cloud</div>
+                             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="m112 244 144-144 144 144M256 120v292"></path>
+                             </svg>
+                          </div>
+                       </a>
+                    </div>
+                 </div>
+              </div>
+              <div class="list-services">
+                 <div class="line" style="translate: none; rotate: none; scale: none; transform: translate3d(0px, -3.4587px, 0px); opacity: 0.9568;">AMA</div>
+                 <!-- <div class="line" style="translate: none; rotate: none; scale: none; font-weight: 417.293; transform: translate3d(0px, 36.5413px, 0px); opacity: 0.5432;">Why ESDS</div>
+                 <div class="line" style="translate: none; rotate: none; scale: none; transform: translate3d(0px, 76.5413px, 0px); opacity: 0.0432; font-weight: 400;">Leadership</div>
+                 <div class="line" style="translate: none; rotate: none; scale: none; transform: translate3d(0px, 76.5413px, 0px); opacity: 0; font-weight: 400;">Careers</div>
+                 <div class="line" style="translate: none; rotate: none; scale: none; transform: translate(0px, 80px); opacity: 0;">Media &amp; Events</div> -->
+              </div>
+              <div class="left-center-tiles-beam">
+                 <div class="left-center-tiles"><img src="tiles - 3P-01.svg" alt=""></div>
+                 <div class="DC-three-beam">
+                    <div class="beam-line-static"><span></span></div>
+                    <div class="beam-line2-static"><span></span></div>
+                    <div class="beam-line3-static"><span></span></div>
+                 </div>
+              </div>
+              <div class="right-center-tiles-beam">
+                 <div class="right-center-tiles"><img src="tiles - 3P-01.svg" alt=""></div>
+                 <div class="MSS-three-beam">
+                    <div class="beam-line-static"><span></span></div>
+                    <div class="beam-line2-static"><span></span></div>
+                    <div class="beam-line3-static"><span></span></div>
+                 </div>
+              </div>
+              <div class="right-tiles-beam">
+                 <div class="right-bottom-tiles"><img src="tiles - 3P-01.svg" alt="" style="right: 150%;position: absolute;bottom: -105px;"></div>
+                 <div class="Right-three-beam">
+                    <div class="beam-line-static"><span></span></div>
+                    <div class="beam-line2-static"><span></span></div>
+                    <div class="beam-line3-static"><span></span></div>
+                 </div>
+                 <div class="MS-three-beam" style="display: none;">
+                    <div class="beam-line-static"><span></span></div>
+                    <div class="beam-line2-static"><span></span></div>
+                    <div class="beam-line3-static"><span></span></div>
+                 </div>
+              </div>
+              <div class="bottom-beam">
+                 <div class="left-top-tiles"><img src="tiles - 3P-01.svg" alt="" style="left: 139%; position: absolute; bottom: 38px;"></div>
+                 <div class="Bottom-three-beam">
+                    <div class="beam-line-static"><span></span></div>
+                    <div class="beam-line2-static"><span></span></div>
+                    <div class="beam-line3-static"><span></span></div>
+                 </div>
+                 <div class="Saas-three-beam" style="display: none;">
+                    <div class="beam-line-static"><span></span></div>
+                    <div class="beam-line2-static"><span></span></div>
+                    <div class="beam-line3-static"><span></span></div>
+                 </div>
+              </div>
+              <div class="top-beams">
+                 <div class="left-bottom-tiles"><img src="tiles - 3P-01.svg" alt="" style="display: none;"></div>
+                 <div class="Top-three-beam">
+                    <div class="beam-line-static"><span></span></div>
+                    <div class="beam-line2-static"><span></span></div>
+                    <div class="beam-line3-static"><span></span></div>
+                 </div>
+                 <div class="Paas-three-beam" style="display: none;">
+                    <div class="beam-line-static"><span></span></div>
+                    <div class="beam-line2-static"><span></span></div>
+                    <div class="beam-line3-static"><span></span></div>
+                 </div>
+              </div>
+              <div class="left-beam">
+                 <div class="right-top-tiles"><img src="tiles - 3P-01.svg" alt="" style="display: none;"></div>
+                 <div class="Left-three-beam">
+                    <div class="beam-line-static"><span></span></div>
+                    <div class="beam-line2-static"><span></span></div>
+                    <div class="beam-line3-static"><span></span></div>
+                 </div>
+                 <div class="C-three-beam" style="display: none;">
+                    <div class="beam-line-static"><span></span></div>
+                    <div class="beam-line2-static"><span></span></div>
+                    <div class="beam-line3-static"><span></span></div>
+                 </div>
+              </div>
+              <div class="SaaS" style="display: none;">
+                 <div class="title">SaaS</div>
+                 <div class="Saas-img"><img src="SaaS.png" alt=""></div>
+              </div>
+              <div class="PaaS" style="display: none;">
+                 <div class="title">PaaS</div>
+                 <div class="Paas-img"><img src="PaaS.svg" alt=""></div>
+              </div>
+              <div class="Cloud-service" style="display: none;">
+                 <div class="title">Cloud</div>
+                 <div class="cloud-img"><img src="Cloud.svg" alt=""></div>
+              </div>
+              <div class="DC-colocation" style="z-index: 2;">
+               <div class="zoom-area digital-transformation" data-content="Digital Transformation Options">
+                 <div class="title">Digital Transformation</div>
+                 <div class="dc-img"><img src="DC-Colocation.svg" alt=""></div>
+               </div>
+              </div>
+              <div class="Managed-security-services" style="z-index: 1;">
+               <div class="zoom-area accounting-audit" data-content="Accounting and Audit Options">
+                 <div class="title">Accounting Audit Services</div>
+                 <div class="manage-security-img"><img src="Manaaged-Security-Services.svg" alt=""></div>
+               </div>
+              </div>
+              <div class="Managed-services" >
+                 <div class="title">Featured Capabilities</div>
+                 <!-- <div class="manage-service-img"><img src="Managed-Services.svg" alt=""></div> -->
+              </div>
+              <div class="overlay" id="overlay">
+               <div class="overlay-content" id="overlay-content"></div>
+               <div class="overlay-menu" id="overlay-menu"></div>
+             </div>
+           </section>
+        </div>
+        <!-- <a href="/contact-us">
+           <div class="right-bottom-btn">
+              <div class="loader">
+                 <img class="envelope" src="messages.svg" alt="envelope">
+                 <div class="words"><span class="word btn-shine2">Connect with ESDS</span><span class="word btn-shine2">Talk to Our Experts</span><span class="word btn-shine2">Schedule a Call</span><span class="word btn-shine2">Get in Touch</span><span class="word btn-shine2">Your Solution Awaits</span></div>
+              </div>
+           </div>
+        </a> -->
+     </div>
+
+     <!-- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'8fa930e5b802f573',t:'MTczNTYzNjc5OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+     <script type="text/javascript" id="" charset="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","568481220197352");fbq("set","agent","tmgoogletagmanager","568481220197352");fbq("track","PageView");</script>
+     <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;8fa930e5b802f573&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2024.10.5&quot;,&quot;token&quot;:&quot;77da6c2c76bb4c0aa964569f8200c8f7&quot;}" crossorigin="anonymous"></script> -->
+
+     <script>
+      const menuContent = {
+      "Digital Transformation": `
+         <ul>
+            <li><a href="#">Cloud Migration</a></li>
+            <li><a href="#">AI Integration</a></li>
+            <li><a href="#">Big Data Analytics</a></li>
+            <li><a href="#">IoT Implementation</a></li>
+         </ul>
+      `,
+      "Accounting Audit Services": `
+         <ul>
+            <li><a href="#">Financial Audit</a></li>
+            <li><a href="#">Tax Compliance</a></li>
+            <li><a href="#">Internal Auditing</a></li>
+            <li><a href="#">Risk Assessment</a></li>
+         </ul>
+      `
+      };
+      const zoomAreas = document.querySelectorAll('.zoom-area');
+      const overlay = document.getElementById('overlay');
+      const overlayContent = document.getElementById('overlay-content');
+      const overlayMenu = document.getElementById('overlay-menu');
+  
+      zoomAreas.forEach(area => {
+        area.addEventListener('click', () => {
+         //  const content = area.getAttribute('data-content');
+         // overlayContent.textContent = content;
+          const title = area.querySelector('.title').innerText.trim();
+          if (menuContent[title]) {
+            overlayMenu.innerHTML = `
+               ${menuContent[title]}
+               <button id="close-overlay">Close</button>
+               `;
+          
+
+          // Smooth zoom animation
+          gsap.to(area, {
+            scale: 1.5,
+            duration: 0.8,
+            onComplete: () => {
+              // Display overlay with content
+              overlay.style.display = 'flex';
+            }
+          });
+  
+          // Dim other areas
+          zoomAreas.forEach(otherArea => {
+            if (otherArea !== area) {
+              gsap.to(otherArea, { opacity: 0.2, duration: 0.5 });
+            }
+          });
+         } else {
+            overlayMenu.innerHTML = `<h2>Content not found!</h2>`;
+            overlay.style.display = 'flex';
+         }
+        });
+      });
+   
+  
+      overlay.addEventListener('click', () => {
+        // Reset animation
+        gsap.to('.zoom-area', { scale: 1, opacity: 1, duration: 0.5 });
+        overlay.style.display = 'none';
+      });
+
+   
+    </script>
+   </body>
+</html>

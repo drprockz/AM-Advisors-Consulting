@@ -1,237 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Why AMA - GSAP Square Animation</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Why AMA - GSAP Circle Animation</title>
 
-  <!-- GSAP + MotionPathPlugin (CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/MotionPathPlugin.min.js"></script>
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="index.css" />
 
-  <style>
-    /* RESET */
-    * {
-      margin: 0; 
-      padding: 0;
-      box-sizing: border-box;
-    }
+        <!-- GSAP + MotionPathPlugin (CDN) -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/gsap@3/dist/MotionPathPlugin.min.js"></script>
 
-    html, body {
-      width: 100%;
-      height: 100%;
-      overflow: hidden; /* no scrollbars */
-      background: radial-gradient(circle at center, #0c1839 20%, #040b1c 90%);
-      font-family: Arial, sans-serif;
-      color: #fff;
-    }
+    </head>
+    <body>
 
-    /* Main container for absolute positioning */
-    .main-wrapper {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
+        <div class="main-wrapper">
 
-    /* HEADERS (Left & Right) */
-    .header-node {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-    }
-    .header-node img {
-      max-width: 300px;
-      margin-bottom: 0.5rem;
-    }
-    .header-node p {
-      font-size: 1rem;
-      line-height: 1.3;
-    }
+            <!-- LEFT HEADER -->
+            <div class="header-node" id="header-left">
+                <img
+                    src="Manaaged-Security-Services.svg"
+                    alt="Digital Transformation" />
+                <p>Digital Transformation</p>
+            </div>
 
-    /* Left header: Digital Transformation */
-    #header-left {
-      top: 45%;
-      left: 5%;
-      transform: translateY(-50%);
-    }
+            <!-- RIGHT HEADER -->
+            <div class="header-node" id="header-right">
+                <img
+                    src="SaaS.png"
+                    alt="Accounting & Audit" />
+                <p>Accounting &amp; Audit</p>
+            </div>
 
-    /* Right header: Accounting & Audit */
-    #header-right {
-      top: 45%;
-      right: 5%;
-      transform: translateY(-50%);
-    }
+            <!-- CENTER CIRCLE (Why AMA) -->
+            <div class="center-circle">
+                <h2>Why AMA</h2>
+                <svg viewBox="0 0 1500 1500"
+                    style="position: absolute; top: 0; left: 0;">
+                    <!-- Diamond shape with three-line border -->
+                    <path d="M 750 100 L 1400 750 L 750 1400 L 100 750 Z"
+                        fill="none" stroke="#00a8ff" stroke-width="6" />
+                    <path d="M 750 125 L 1375 750 L 750 1375 L 125 750 Z"
+                        fill="none" stroke="#00a8ff" stroke-width="4" />
+                    <path d="M 750 150 L 1350 750 L 750 1350 L 150 750 Z"
+                        fill="none" stroke="#00a8ff" stroke-width="2" />
+                </svg>
+            </div>
 
-    /* Center square (Why AMA) */
-    .center-square {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 120px;
-      height: 120px;
-      transform: translate(-50%, -50%);
-      background: rgba(0, 168, 255, 0.15);
-      border: 1px solid #00a8ff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-    }
-    .center-square h2 {
-      font-size: 1rem;
-      margin: 0;
-      text-align: center;
-      padding: 0 10px; /* Some horizontal padding for better text wrapping */
-    }
+            <div class="top-beams">
+                <div class="left-bottom-tiles">
+                    <img
+                        src="tiles.svg" alt>
+                </div>
 
-    /* SVG for lines + traveling nodes */
-    svg {
-      position: absolute;
-      top: 0; 
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    /* We use a 1000x1000 coordinate system so center = (500, 500). */
-    path {
-      stroke: #00a8ff;
-      stroke-width: 2;
-      stroke-opacity: 0.8;
-      fill: none;
-    }
-    circle {
-      fill: #00a8ff;
-    }
-  </style>
-</head>
-<body>
+                <div class="Top-three-beam">
+                    <div class="beam-line2-static"><span></span></div>
+                    <div class="beam-line3-static"><span></span></div>
+                </div>
+                
+                <div class="beam-line-static"><span></span></div>
+                <div class="Paas-three-beam">
+                    <div class="beam-line-static"><span></span></div>
+                    <div class="beam-line2-static"><span></span></div>
+                    <div class="beam-line3-static"><span></span></div>
+                </div>
+            </div>
 
-<div class="main-wrapper">
+            <!-- SVG LINES (3 lines from center's left edge to left header, 
+       3 lines from center's right edge to right header) 
+       + circles for traveling nodes
+       We'll define a viewBox so center = (500,500). 
+       The circle boundary for the left side is around x= (500 - 60) = 440,
+       for the right side around x= (500 + 60) = 560,
+       with slight +/- offsets in the y coords.
+  -->
+            <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
 
-  <!-- LEFT HEADER -->
-  <div class="header-node" id="header-left">
-    <img 
-      src="Manaaged-Security-Services.svg" 
-      alt="Digital Transformation"
-    />
-    <p>Digital Transformation</p>
-  </div>
+                <!-- ====== LEFT LINES (3) ====== -->
+                <!-- Middle line: from circle edge (~440,500) to left node (~200,500) -->
+                <path id="left-line1" d="M 440,500  200,500" />
+                <!-- Slightly higher -->
+                <path id="left-line2" d="M 440,490  200,490" />
+                <!-- Slightly lower -->
+                <path id="left-line3" d="M 440,510  200,510" />
 
-  <!-- RIGHT HEADER -->
-  <div class="header-node" id="header-right">
-    <img 
-      src="SaaS.png" 
-      alt="Accounting & Audit"
-    />
-    <p>Accounting &amp; Audit</p>
-  </div>
+                <!-- 6 traveling circles for the left side (forward/back for each line) -->
+                <circle id="cl1f" r="4" />
+                <circle id="cl1b" r="4" />
+                <circle id="cl2f" r="4" />
+                <circle id="cl2b" r="4" />
+                <circle id="cl3f" r="4" />
+                <circle id="cl3b" r="4" />
 
-  <!-- CENTER SQUARE (Why AMA) -->
-  <div class="center-square">
-    <h2>Why AMA</h2>
-  </div>
+                <!-- ====== RIGHT LINES (3) ====== -->
+                <!-- Middle line: from circle edge (~560,500) to right node (~800,500) -->
+                <path id="right-line1" d="M 560,500  800,500" />
+                <!-- Slightly higher -->
+                <path id="right-line2" d="M 560,490  800,490" />
+                <!-- Slightly lower -->
+                <path id="right-line3" d="M 560,510  800,510" />
 
-  <!-- SVG LINES (3 lines from center's left edge to left header, 
-       3 lines from center's right edge to right header) -->
-  <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+                <!-- 6 traveling circles for the right side -->
+                <circle id="cr1f" r="4" />
+                <circle id="cr1b" r="4" />
+                <circle id="cr2f" r="4" />
+                <circle id="cr2b" r="4" />
+                <circle id="cr3f" r="4" />
+                <circle id="cr3b" r="4" />
 
-    <!-- ====== LEFT LINES (3) ====== -->
-    <path id="left-line1" d="M 440,500  200,500" />
-    <path id="left-line2" d="M 440,490  200,490" />
-    <path id="left-line3" d="M 440,510  200,510" />
+            </svg>
 
-    <!-- 6 traveling circles for the left side (forward/back) -->
-    <circle id="cl1f" r="4" />
-    <circle id="cl1b" r="4" />
-    <circle id="cl2f" r="4" />
-    <circle id="cl2b" r="4" />
-    <circle id="cl3f" r="4" />
-    <circle id="cl3b" r="4" />
+        </div> <!-- /.main-wrapper -->
 
-    <!-- ====== RIGHT LINES (3) ====== -->
-    <path id="right-line1" d="M 560,500  800,500" />
-    <path id="right-line2" d="M 560,490  800,490" />
-    <path id="right-line3" d="M 560,510  800,510" />
+        <script src="script.js"></script>
 
-    <!-- 6 traveling circles for the right side -->
-    <circle id="cr1f" r="4" />
-    <circle id="cr1b" r="4" />
-    <circle id="cr2f" r="4" />
-    <circle id="cr2b" r="4" />
-    <circle id="cr3f" r="4" />
-    <circle id="cr3b" r="4" />
-
-  </svg>
-
-</div> <!-- /.main-wrapper -->
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  gsap.registerPlugin(MotionPathPlugin);
-
-  // 1) Hide the left/right headers initially
-  gsap.set(["#header-left", "#header-right"], { autoAlpha: 0 });
-
-  // 2) Create traveling-circle animations in a paused state
-  const anims = [];
-
-  // Helper function to create forward/back GSAP motions
-  function createLineAnims(forwardId, backwardId, pathSelector, duration, delayFactor=0.5) {
-    // forward
-    const forwardAnim = gsap.to(forwardId, {
-      duration,
-      repeat: -1,
-      ease: "none",
-      paused: true,
-      motionPath: {
-        path: pathSelector,
-        align: pathSelector,
-        start: 0,
-        end: 1,
-        autoRotate: false
-      }
-    });
-    // backward
-    const backwardAnim = gsap.to(backwardId, {
-      duration,
-      repeat: -1,
-      ease: "none",
-      paused: true,
-      delay: duration * delayFactor,
-      motionPath: {
-        path: pathSelector,
-        align: pathSelector,
-        start: 1,
-        end: 0,
-        autoRotate: false
-      }
-    });
-    anims.push(forwardAnim, backwardAnim);
-  }
-
-  // Left line animations
-  createLineAnims("#cl1f", "#cl1b", "#left-line1", 2.5, 0.5);
-  createLineAnims("#cl2f", "#cl2b", "#left-line2", 3.0, 0.5);
-  createLineAnims("#cl3f", "#cl3b", "#left-line3", 2.2, 0.5);
-
-  // Right line animations
-  createLineAnims("#cr1f", "#cr1b", "#right-line1", 2.7, 0.5);
-  createLineAnims("#cr2f", "#cr2b", "#right-line2", 3.2, 0.5);
-  createLineAnims("#cr3f", "#cr3b", "#right-line3", 2.4, 0.5);
-
-  // 3) On click, fade in headers and play all traveling animations
-  document.querySelector(".center-square").addEventListener("click", () => {
-    // Fade in left/right
-    gsap.to(["#header-left", "#header-right"], { autoAlpha: 1, duration: 1 });
-
-    // Start the traveling animations
-    anims.forEach(anim => anim.play());
-  });
-});
-</script>
-
-</body>
+    </body>
 </html>
