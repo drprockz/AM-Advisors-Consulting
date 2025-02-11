@@ -12,21 +12,36 @@
       <script
          src="https://cdn.jsdelivr.net/npm/gsap@3/dist/MotionPathPlugin.min.js"></script>
          <style>
-            #left-glow-image, #right-glow-image {  
-            transition: transform 3s ease-in-out, filter 3s ease-in-out, box-shadow 3s ease-in-out;
-            animation: glowUp 3s infinite alternate ease-in-out;
-        }
+            @font-face {
+            font-family: "Proxima Nova Extra Bold";
+            src: url("ProximaNova-Extrabld.ttf") format("truetype");
+            font-weight: bold;
+            font-style: normal;
+            }
 
-        @keyframes glowUp {
+            .DC-colocation .title,
+            .navbar-innerdiv .Managed-security-services .title,
+            .Managed-services .title {
+            font-family: "Proxima Nova Extra Bold", sans-serif;
+            }
+            #left-glow-image,
+            #right-glow-image {
+            transition: transform 3s ease-in-out, filter 3s ease-in-out,
+               box-shadow 3s ease-in-out;
+            animation: glowUp 3s infinite alternate ease-in-out;
+            }
+
+            @keyframes glowUp {
             0% {
-                transform: scale(1);
-                filter: brightness(1);
+               transform: scale(1);
+               filter: brightness(1);
             }
             100% {
-                transform: scale(1.2);
-                filter: brightness(1.8);
+               transform: scale(1.2);
+               filter: brightness(1.8);
             }
-        }
+            }
+
          </style>
    </head>
    <body>
@@ -253,13 +268,13 @@
               <div class="DC-colocation" style="z-index: 2;">
                <div class="zoom-area digital-transformation" data-content="Digital Transformation Options">
                  <div class="title">Digital Transformation</div>
-                 <div class="dc-img"><img src="DC-Colocation.svg" alt=""></div>
+                 <div class="dc-img"><img src="Digital Transformation Image.svg" alt=""></div>
                </div>
               </div>
               <div class="Managed-security-services" style="z-index: 1;">
                <div class="zoom-area accounting-audit" data-content="Accounting and Audit Options">
                  <div class="title">Accounting Audit Services</div>
-                 <div class="manage-security-img"><img src="Manaaged-Security-Services.svg" alt=""></div>
+                 <div class="manage-security-img"><img src="Accounting Audit Services Image.svg" alt=""></div>
                </div>
               </div>
               <div class="Managed-services" >

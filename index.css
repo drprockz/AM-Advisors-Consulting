@@ -2718,7 +2718,8 @@ span.close {
 }
 .DC-colocation .dc-img img {
   width:100%;
-  height:100%
+  height:100%;
+  margin-top: 87px;
 }
 .DC-colocation .title {
   position:absolute;
@@ -2739,8 +2740,8 @@ span.close {
 }
 .navbar-innerdiv .Managed-security-services {
   position:absolute;
-  top:32%;
-  right:13%;
+  top:34%;
+  right:16%;
   transition:all 1s ease
 }
 .manage-security-scale .Managed-security-services {
@@ -2749,7 +2750,8 @@ span.close {
 }
 .navbar-innerdiv .Managed-security-services .manage-security-img {
   width:11vw;
-  height:11vw
+  height:11vw;
+  margin-top: 87px;
 }
 .Managed-security-services .manage-security-img img {
   width:100%;
